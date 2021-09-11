@@ -1,0 +1,301 @@
+<html>
+
+<head>
+
+    <title>Todo App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/checkout/">
+    <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link href="form-validation.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      * {box-sizing: border-box;}
+
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #b43e3e;
+  }
+  
+  .topnav a {
+    float: left;
+    display: block;
+    color: rgb(245, 241, 241);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 4px;
+  }
+  
+  .topnav a:hover {
+    background-color: #cac2c2;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .topnav a.active {
+    background-color: #2a6f4e;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .topnav .search-container {
+    float: right;
+  }
+
+  .topnav .ss {
+    float: right;
+  }
+  
+  .topnav input[type=text] {
+    padding: 6px;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  
+  .topnav .search-container button {
+    float: right;
+    padding: 4px 8px;
+    padding-left: 3px;
+    padding-right: 3px;
+    top: 8px;
+    margin-top: 10px;
+    margin-right: 25px;
+    margin-left: 25px;
+    width: 50px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    color: green;
+  }
+  
+  .topnav .search-container button:hover {
+    background: #ccc;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .topnav .search-container {
+      float: none;
+    }
+    .topnav a, .topnav input[type=text], .topnav .search-container button {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    .topnav input[type=text] {
+      border: 1px solid #ccc;  
+    }
+  }
+    body {
+        background-color:#cececeae;
+        font-family: 'Nunito', sans-serif;
+        padding-top: 0px;
+        margin: 0;
+        /* font-family: Arial, Helvetica, sans-serif; */
+      }
+
+    </style>
+
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+    <a href="/logout">Log Out</a>
+    <div class="ss">
+        <a href="/">Add more items</a>
+        <a href="/carts">Return to Cart</a>
+    </div>
+</div>
+<br>
+<br>
+<div class="container">
+<main>
+
+<div class="row g-5">
+  <div class="col-md-5 col-lg-4 order-md-last">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-primary">Your cart</span>
+      <span class="badge bg-primary rounded-pill"><%= qTotal %> </span>
+    </h4>
+    <% items.forEach(function(item){ %>
+    <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between lh-sm">
+        <div>
+            <h6 class="my-0"><%= item.brand %></h6>
+          <small class="text-muted"><%= item.size %></small>
+        </div>
+        <span class="text-muted">QTY: <%= item.qty %></span>
+        <span class="text-muted">$<%= item.total %></span>
+      </li>
+    </ul>
+    <% }) %>
+    <ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Total (USD)</span>
+      <strong>$ <%= payTotal %></strong>
+    </li>
+    </ul>
+    </div>
+
+    <div class="col-md-7 col-lg-8">
+      <h4 class="mb-3">Billing address</h4>
+      <form class="needs-validation" action="/payment" method="POST">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="fname" class="form-label">First name</label>
+            <input type="text" class="form-control" name="fname" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="lname" class="form-label">Last name</label>
+            <input type="text" class="form-control" name="lname" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+
+
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="you@example.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+    
+    <div class="col-12">
+            <label for="pnum" class="form-label">Contact Number</label>
+            <input type="text" class="form-control" name="pnum" required>
+            <div class="invalid-feedback">
+              Please enter a valid number
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="adr" class="form-label">Address</label>
+            <input type="text" class="form-control" name="adr" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+
+          <!-- <div class="col-md-5">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" class="form-control" name="country" required>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+          </div> -->
+
+          <div class="col-md-4">
+            <label for="state" class="form-label">State</label>
+            <input type="text" class="form-select" name="state" required>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+    
+    <div class="col-md-4">
+            <label for="city" class="form-label">City</label>
+            <input type="text" class="form-select" name="city" required>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="zcode" class="form-label">Zip</label>
+            <input type="text" class="form-control" name="zcode" placeholder="" required>
+            <div class="invalid-feedback">
+              Zip code required.
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <hr class="my-4">
+
+        <h4 class="mb-3">Payment</h4>
+
+        <div class="row gy-3">
+    
+          <div class="col-md-6">
+            <label for="cnum" class="form-label">Credit card number</label>
+            <input type="text" class="form-control" name="cnum" placeholder="" required>
+            <div class="invalid-feedback">
+              Credit card number is required
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="date" class="form-label">Expiration</label>
+            <input type="month" class="form-control" name="date" placeholder="" required>
+            <div class="invalid-feedback">
+              Expiration date required
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <label for="scode" class="form-label">CVV</label>
+            <input type="text" class="form-control" name="scode" placeholder="" required>
+            <div class="invalid-feedback">
+              Security code required
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+</div>
+</main>
+
+       
+
+
+</body>
+
+</html>

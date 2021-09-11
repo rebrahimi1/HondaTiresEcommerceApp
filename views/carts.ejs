@@ -1,0 +1,134 @@
+<html>
+
+<head>
+
+    <title>Todo App</title>
+
+    <link href="css/prc.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300i,400,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+
+<style>
+    #customers {
+      font-family: Arial, Helvetica, sans-serif;
+        margin-top: 15px;
+        margin-right:28px;
+      width: 20%;
+        float: right;
+        border-radius: 10px;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 7px;
+      border-radius: 10px;
+      
+    
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2; text-align: center; border-radius: 10px;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+        border-radius: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 0px;
+      text-align: center;
+      background-color: #184821;
+      color: white;
+    }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/logout">Log Out</a>
+        <div class="ss">
+            <a href="/">Add more items</a>
+
+        </div>
+    </div>
+
+    
+    <table id="customers">
+        <tr>
+          <th>Total Price (USD)</th>
+          <th>Total Quantity</th>
+        </tr>
+        <tr>
+          <td>$<%=cartTotal%></td>
+          <td><%=cartQ%></td>
+        </tr>
+       
+        
+      </table>
+      <button class="aa" style="vertical-align:middle"><a href="/payment">Go To Checkout</a></button>
+
+        
+        <br>
+        <br>
+
+                
+
+                  <div class="gallery">
+                    <% cartSh.forEach(function(cart) { %>
+                      <div class="content" style="background-color: aliceblue;">
+                        <form action="/delete" method="post">
+
+                   
+                          <h5><%= cart.brand %></h5>
+                  <span><b>Size:</b></span>
+                  <span><%= cart.size %></span><br>
+                  <span><b>Price:</b></span>
+                  <span>$</span>
+                  <span name="prc"><%= cart.price %></span><br>
+                  <span><b>Total Price:</b></span>
+                  <span>$<%= cart.total %></span>
+                  <p><button type="submit" name="rmv" value="<%= cart._id %>" class="myBt"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                  </svg></button></p>
+                 
+              </form>
+              
+              <form action="/update" method="post">
+                <span>QTY: </span>
+                  <input type="number" name="qu" value="<%= cart.qty %>" min="1" max="30" style="text-align: center; ">
+                  <br>
+                  <button type="submit" name="inc" value="<%= cart._id %>" onchange="this.form.submit()"class="myBtn"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                    </svg></button>
+              
+  
+              </form>
+                      </div>
+                      <% }) %>
+                  </div>
+
+
+   
+        
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
