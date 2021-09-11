@@ -8,7 +8,7 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 
-const mnd = require(__dirname + "/db.js");
+// const mnd = require(__dirname + "/db.js");
 // const bcrypt = require("bcrypt");
 // const saltRounds = 10;
 // const md5 = require("md5");
@@ -55,7 +55,7 @@ app.use(passport.session());
 
 
 
-mongoose.connect(mnd.dbCred, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // mongoose.set("useCreateIndex", true);
 
