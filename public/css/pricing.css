@@ -132,10 +132,11 @@ a:link{
 
 .topnav a {
   float:left;
-  display: flex;
+  display: block;
   color: rgb(245, 241, 241);
   padding: 14px 16px;
   text-decoration: none;
+  text-align: center;
   font-size: 17px;
   margin: 5px;
 }
@@ -187,7 +188,7 @@ a:link{
   background: #ccc;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .topnav .search-container {
     float: none;
   }
