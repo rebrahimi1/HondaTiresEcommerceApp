@@ -132,13 +132,14 @@ a:link{
 
 .topnav a {
   float:left;
-  display: block;
+  display: flex;
   color: rgb(245, 241, 241);
   padding: 14px 16px;
   text-decoration: none;
   text-align: center;
   font-size: 17px;
   margin: 5px;
+  
 }
 
 .topnav a:hover {
@@ -188,7 +189,17 @@ a:link{
   background: #ccc;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
+  .topnav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: #b43e3e;
+    width: 100%;
+    
+  }
   .topnav .search-container {
     float: none;
   }
