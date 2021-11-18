@@ -7,4 +7,8 @@ Implemented the Back-End with Node.js, MongoDB, ExpressJS. Implemented Front-End
 
 As this E-Commerce App was developed and deployed for personal project, and contains tire products for Honda cars, I have decided not to add the payment system to the web app features. In the future, I will create another repository to show how to build a payment system by integrating PayPal API.
 
+Link:
+
+https://cryptic-inlet-24270.herokuapp.com/
+
 
